@@ -1,7 +1,4 @@
 # Parkday-Data-Science-Technical-Take-Home
-
-This is the README.md file for this project. I'll update this by the final submission to detail my process of taking on this task, what I learned, and what could be done or improved in the future.
-
 For this project, the objective was described as such:
 "Analyze a set of user and meal data and 1) characterize the data for insights, 2) implement meal recommendations, and 3) suggest next steps in a data science pipeline buildout"
 
@@ -25,4 +22,10 @@ With this, I moved into some exploratory data analysis. I was interested in look
 
 If I were to work further on this, I would perform more EDA regarding relationships between user-liked ingredients and meal ingredients to gain some insight into trends between them before setting up a meal recommendation model.
 
-For the 
+For the recommendation model, I used the sklearn module to implement tf-idf and cosine similarity to give the top 5 meal recommendations for each user. I developed document-term matrices for both the user dataset and meal dataset, established similarity scores, and then produced a dataframe displaying these scores for each meal. Once completed, I formed a dictionary that would store each user's top 5 meals in terms of highest cosine similarity scores. The user names were the keys of this dictionary, so by calling a user's name, their top 5 meals could be accessed.
+
+As it currently stands, this model is fairly primitive, and only accounts for ingredients and not the other data points collected. If I were to take this further in the future, I would try to accomplish a couple of things. First, I would want to be able to allow a user to input a list of ingredients, such that their information becomes appended to the user dataset, and their top 5 meal recommendations are automatically assigned. Additionally, I would like to involve more factors. Further data collection beyond simply liked ingredients could help enhance this model to make even more accurate recommendations. If the model took into account flavor preferences and prep time restrictions, it could provide greater meal suggestions. This data could be collected both directly and indirectly-- the user could submit their time restrictions to help trim down some options, and the model could learn flavor preferences dependent upon what flavors are present in the meals the user has chosen in the past. There is a lot that could be done in terms of expanding upon this, including things such as K-Nearest Neighbors, and possibly employing regression with all of these factors to make meal predictions. 
+
+Regardless, for the purpose of this task and fine-grained preference data, I believe this to be a good start. I learned some new ways of doing things as I worked through some trouble points, gaining experience with the 'ast' module that I hadn't used before, and freshening up on how to employ lambda functions in a couple of spots. I also revisited sklearn which I hadn't used since my internship last summer, learning a little more tf-idf than I had understood previously. All things considered, I enjoyed working through these datasets and coming up with an early version of a recommendation system for fine-grained preference information.
+
+Jake Antmann
